@@ -41,12 +41,6 @@ export class App {
 
     rentBike(bike: Bike, user: User, startDate: Date, endDate: Date): Rent {
 
-        if (startDate > endDate) {
-            throw new Error('Invalid dates.')
-        }
-        if (startDate < new Date()) {
-            throw new Error('Invalid dates.')
-        }
         if (!this.findUser(user.email)) {
             throw new Error('User not found.')
         }
