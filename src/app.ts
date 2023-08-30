@@ -54,6 +54,15 @@ export class App {
     }
 
     returnBike(rent: Rent): void {
-        rent.returnBike()
+
+        const index = this.rents.indexOf(rent)
+
+        if (index === -1) {
+            throw new Error('Rent not found.')
+        }
+
+        this.rents.splice(index, 1)
+
+        console.log('Bike successfully returned!.')
     }
 }
